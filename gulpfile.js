@@ -180,9 +180,10 @@ gulp.task('default', ['clean', 'templates', 'styles', 'javascripts', 'images', '
 */
 gulp.task('deploy', function () {
   gulp
-    .src(
-      __dirname + '/output/**/*'
-    )
+    .src([
+      __dirname + '/output/**/*',
+      __dirname + '/CNAME'
+    ])
     .pipe(
       deploy()
     );
