@@ -1,0 +1,68 @@
+@import ('nib')
+@import url('//fonts.googleapis.com/css?family=Source+Code+Pro:400,600');
+
+
+/* @CUSTOM colors for easy use */
+_accent = #2ECC71
+/* end @CUSTOM */
+
+.monospace
+  font-family 'Source Code Pro', monospace
+
+.pure-g [class *='pure-u'],
+.pure-g-r [class*="pure-u"]
+  @extends .monospace
+
+html,
+body
+  width 100%
+  height 100%
+  @extends .monospace
+  font-size 12px
+
+.pure-form
+  input[type='text'], input[type='password'], input[type='email'], input[type='url'], input[type='date'], input[type='month'], input[type='time'], input[type='datetime'], input[type='datetime-local'], input[type='week'], input[type='number'], input[type='search'], input[type='tel'], input[type='color'], select, textarea
+    @extends .monospace
+  button
+    @extends .monospace
+
+/* @CUSTOM CSS for fast start */
+h1, h2, h3
+  font-weight 400
+h4, h5, h6
+  font-weight 600
+
+_spacer = 5, 10, 20, 40, 60, 80, 100, 150
+
+for _val in _spacer
+  .spacer-{ _val }
+    height ( _val * 1px )
+
+.text-left
+  text-align left
+.text-center
+  text-align center
+.text-right
+  text-align right
+
+a.link
+  text-decoration none
+  color #333
+  box-shadow inset 0 -2px 0 rgba(#333, 0.2)
+  transition color 0.3s ease, box-shadow 0.3s ease
+  display inline-block
+  &:hover
+    color _accent
+    box-shadow inset 0 -2px 0 rgba(_accent, 0.3)
+/* end @CUSTOM */
+
+.page
+  padding 20px
+  position absolute
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+  
+b,
+strong
+  font-weight 600
